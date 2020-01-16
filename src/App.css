@@ -20,15 +20,20 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-background-greydark {
-  background-color: #5f6063;
+.App-background-light {
+  background-color: white;
+  color: black;
 }
 
 .App-background-dark {
-  background-color: #282c34;  
+  background-color: #282c34;
+  color: white;  
+}
+
+.App-background-light button {
+  border: 0
 }
 
 .App-link {

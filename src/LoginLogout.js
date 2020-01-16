@@ -23,10 +23,11 @@ class LoginLogout extends React.Component {
 
     render() {
         let button
+        console.log(this.context)
         if (!this.state.isLoggedIn) {
-            button = <button className={this.context.button} name="login" onClick={this.handleClick}>Log in</button>
+            button = <button className={this.context.theme.button} name="login" onClick={this.handleClick}>Log in</button>
         } else {
-            button = <button name="logout" onClick={this.handleClick}>Log out</button>
+            button = <button className={this.context.theme.button} name="logout" onClick={this.handleClick}>Log out</button>
         }
 
         return(

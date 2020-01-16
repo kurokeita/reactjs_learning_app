@@ -1,7 +1,9 @@
 import React from 'react'
 import Text from './Text'
+import {ThemeContext} from './ThemeContext'
 
 class Toggle extends React.Component {
+    static contextType = ThemeContext
     constructor(props) {
         super(props)
         this.state = {
@@ -19,7 +21,17 @@ class Toggle extends React.Component {
     }
 
     render() {
-        let button = <button className="Button-dark" onClick={this.handleClick}>{this.state.toggleState ? 'ON' : 'OFF'}</button>
+        // let button = <button className={this.context.theme.button} onClick={this.handleClick}>{this.state.toggleState ? 'ON' : 'OFF'}</button>
+        let button = <ThemeContext.Consumer>
+            {({theme, themeToggle}) => (
+                <button className={theme.button} onClick={() => {
+                    this.handleClick()
+                    themeToggle()
+                }}>
+                    {this.state.toggleState ? 'ON' : 'OFF'}
+                </button>
+            )}
+        </ThemeContext.Consumer>
         return(
             <div>
                 <p>

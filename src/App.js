@@ -7,13 +7,19 @@ import './App.css'
 import {ThemeContext, themes} from './ThemeContext'
 
 class App extends React.Component{
-    static contextType = ThemeContext
     constructor(props) {
         super(props)
+
+        this.themeToggle = () => {
+            this.setState(state => ({
+                theme: state.theme === 'dark' ? 'light' : 'dark'
+            }))
+        }
+
         this.state = {
             isLoggedIn: false,
             name: '',
-            theme: 'light'
+            theme: 'dark'
         }
         this.handleLoggedInStatus = this.handleLoggedInStatus.bind(this)
         this.handleTheme = this.handleTheme.bind(this)
@@ -33,14 +39,11 @@ class App extends React.Component{
     }
 
     render() {
-        // console.log(this.state.theme)
-        console.log(this.context)
-        console.log(themes[this.state.theme])
         return (
-            <ThemeContext.Provider value={themes[this.state.theme]}>
+            <ThemeContext.Provider value={{theme:themes[this.state.theme], themeToggle: this.themeToggle}}>
                 <div className="App">
                     <React.StrictMode>
-                    <header className={"App-header " + this.context.background}>
+                    <header className={"App-header " + themes[this.state.theme].background}>
                         <img src={logo} className="App-logo" alt="logo" />
                         <p>
                             Edit <code>src/App.js</code> and save to reload.
@@ -52,7 +55,7 @@ class App extends React.Component{
                             {/*<br/>*/}
                             {/*<Time interval='5000'/>*/}
                         </p>
-                        <button className={this.context.button} onClick={this.handleTheme}>Change theme</button>
+                        <button className={themes[this.state.theme].button} onClick={this.handleTheme}>Change theme</button>
                         <LoginLogout loggedInStatus={this.handleLoggedInStatus}/>
                         <Data isLoggedIn={this.state.isLoggedIn} name={this.state.name} />
                         <a

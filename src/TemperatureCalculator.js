@@ -12,7 +12,7 @@ class TemperatureCalculator extends React.Component {
     }
 
     handleTemperature(value, type) {
-        let other = (type === 'Celsius') ? 'Farenheit' : 'Celsius'
+        let other = (type === 'Celsius') ? 'Fahrenheit' : 'Celsius'
         value = (value === '') ? 0 : value
         this.setState({
             [type]: value,

@@ -3,6 +3,7 @@ import Test from './Test'
 import Listing from './Listing'
 import Toggle from './Toggle'
 import Form from './Form'
+import TemperatureCalculator from './TemperatureCalculator'
 
 class Data extends React.Component {
     render() {
@@ -15,6 +16,7 @@ class Data extends React.Component {
             <div>
                 <Test name={this.props.name} />
                 <Listing list={list} />
+                <TemperatureCalculator />
                 <Toggle />
                 <Form />
             </div>

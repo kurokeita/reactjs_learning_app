@@ -8,13 +8,15 @@ class Form extends React.Component {
             typing: '',
             textarea: '',
             select: '',
-            selecting: 'kurokeita'
+            selecting: 'kurokeita',
+            change1: ''
         }
 
         this.handleChangeInput = this.handleChangeInput.bind(this)
         this.handleChangeSelect = this.handleChangeSelect.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleOnChange = this.handleOnChange.bind(this)
+        this.handleChange1 = this.handleChange1.bind(this)
     }
 
     handleChangeInput(e) {
@@ -47,17 +49,22 @@ class Form extends React.Component {
         })
     }
 
+    handleChange1(e) {
+        this.setState({
+            change1: e.target.value
+        })
+    }
+
     render() {
-        console.log(this.state.textarea)
         return(
             <form onSubmit={this.handleSubmit}>
                 <label>
                     Name:    
-                    <input type="text" name="name" value={this.state.typing} onChange={this.handleChangeInput}></input>
+                    <input type="text" name="name" value={this.state.typing} onChange={this.handleChangeInput}/>
                 </label>
                 <p>Typing: {this.state.typing}</p>
                 <p>Input: {this.state.name}</p>
-                <textarea name="textarea"></textarea>
+                <textarea name="textarea"/>
                 <pre><p>Textarea: <code>{this.state.textarea}</code></p></pre>
                 <select name="select" value={this.state.selecting} onChange={this.handleChangeSelect}>
                     <option value="test">Test</option>
@@ -67,7 +74,8 @@ class Form extends React.Component {
                     <option value="wow">wow</option>
                 </select>
                 <p>Selected: <code>{this.state.select}</code></p>
-                <input type="submit" value="Submit"></input>
+                <input type="text" value="unable to edit" onChange={this.handleChange1}/>
+                <input type="submit" value="Submit"/>
             </form>
         )
     }

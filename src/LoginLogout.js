@@ -1,41 +1,34 @@
 import React from 'react'
-import Data from './Data'
 
 class LoginLogout extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             isLoggedIn: false
-        }
-
-        this.handleLoginClick = this.handleLoginClick.bind(this)
-        this.handleLogoutClick = this.handleLogoutClick.bind(this)
+        }        
+        this.handleClick = this.handleClick.bind(this)
     }
 
-    handleLoginClick() {
+    handleClick(e) {
+        let name = e.target.name
+        let status = (name === 'login') ? true : false
         this.setState({
-            isLoggedIn: true
+            isLoggedIn: status
         })
-    }
-
-    handleLogoutClick() {
-        this.setState({
-            isLoggedIn: false  
-        })
+        this.props.loggedInStatus(status)
     }
 
     render() {
         let button
         if (!this.state.isLoggedIn) {
-            button = <button onClick={this.handleLoginClick}>Log in</button>
+            button = <button name="login" onClick={this.handleClick}>Log in</button>
         } else {
-            button = <button onClick={this.handleLogoutClick}>Log out</button>
+            button = <button name="logout" onClick={this.handleClick}>Log out</button>
         }
 
         return(
             <div>
                 {button}
-                <Data isLoggedIn={this.state.isLoggedIn} name="kurokeita" />
             </div>
         )
     }

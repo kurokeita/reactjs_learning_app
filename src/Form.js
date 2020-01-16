@@ -1,5 +1,5 @@
 import React from 'react'
-const axios = require('axios')
+import axios from 'axios'
 
 class Form extends React.Component {
     constructor(props) {
@@ -86,8 +86,7 @@ class Form extends React.Component {
         return(
             <form onSubmit={this.handleSubmit}>
                 <label>
-                    Name:    
-                    <input type="text" name="name" value={this.state.typing} onChange={this.handleChangeInput}/>
+                    Name: <input type="text" name="name" value={this.state.typing} onChange={this.handleChangeInput}/>
                 </label>
                 <p>Typing: {this.state.typing}</p>
                 <p>Input: {this.state.name}</p>

@@ -6,7 +6,7 @@ class TemperatureCalculator extends React.Component {
         super(props)
         this.state = {
             Celsius: 0,
-            Farenheit: 32,
+            Fahrenheit: 32,
         }
         this.handleTemperature = this.handleTemperature.bind(this)
     }
@@ -32,7 +32,7 @@ class TemperatureCalculator extends React.Component {
         return(
             <div>
                 <TemperatureInput type="Celsius" value={this.state.Celsius} onChange={this.handleTemperature} />
-                <TemperatureInput type="Farenheit" value={this.state.Farenheit} onChange={this.handleTemperature} />
+                <TemperatureInput type="Fahrenheit" value={this.state.Fahrenheit} onChange={this.handleTemperature} />
             </div>
         )
     }

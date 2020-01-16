@@ -1,4 +1,5 @@
 import React from 'react'
+const axios = require('axios')
 
 class Form extends React.Component {
     constructor(props) {
@@ -9,7 +10,8 @@ class Form extends React.Component {
             textarea: '',
             select: '',
             selecting: 'kurokeita',
-            change1: ''
+            change1: '',
+            username: ''
         }
 
         this.handleChangeInput = this.handleChangeInput.bind(this)
@@ -18,6 +20,18 @@ class Form extends React.Component {
         this.handleOnChange = this.handleOnChange.bind(this)
         this.handleChange1 = this.handleChange1.bind(this)
     }
+
+    // componentDidMount() {
+    //     axios.request({
+    //         method: 'POST',
+    //         url: 'http://kurokeita.ddns.net:38080/api/test',
+    //         data: {
+    //             username: this.state.username
+    //         }
+    //     }).then((res) => {
+    //         console.log(res)
+    //     })
+    // }
 
     handleChangeInput(e) {
         this.setState({
@@ -31,13 +45,26 @@ class Form extends React.Component {
         })
     }
 
-    handleSubmit(e) {
-        this.setState({
+    async handleSubmit(e) {
+        e.preventDefault()
+        await this.setState({
             name: e.target.name.value,
             textarea: e.target.textarea.value,
             select: e.target.select.value,
+            username: e.target.name.value
         })
-        e.preventDefault()
+        axios.request({
+            method: 'POST',
+            url: 'http://kurokeita.ddns.net:38080/api/test',
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+            },
+            data: {
+                username: this.state.username
+            }
+        }).then(function (response) {
+            console.log(response)
+        })
     }
 
     handleOnChange(e) {

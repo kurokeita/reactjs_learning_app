@@ -19,7 +19,7 @@ class Toggle extends React.Component {
     }
 
     render() {
-        let button = <button onClick={this.handleClick}>{this.state.toggleState ? 'ON' : 'OFF'}</button>
+        let button = <button className="Button-dark" onClick={this.handleClick}>{this.state.toggleState ? 'ON' : 'OFF'}</button>
         return(
             <div>
                 <p>

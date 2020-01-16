@@ -14,7 +14,9 @@ class Data extends React.Component {
         }
         return(
             <div>
-                <Test name={this.props.name} />
+                <Test name={this.props.name}>
+                    <code>Test props children</code>
+                </Test>
                 <Listing list={list} />
                 <TemperatureCalculator />
                 <Toggle />

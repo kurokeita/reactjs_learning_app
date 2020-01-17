@@ -12,7 +12,8 @@ class App extends React.Component{
 
         this.themeToggle = () => {
             this.setState(state => ({
-                theme: state.theme === 'dark' ? 'light' : 'dark'
+                theme: state.theme === 'dark' ? 'light' : 'dark',
+                username: ''
             }))
         }
 
@@ -23,18 +24,25 @@ class App extends React.Component{
         }
         this.handleLoggedInStatus = this.handleLoggedInStatus.bind(this)
         this.handleTheme = this.handleTheme.bind(this)
+        this.changeName = this.changeName.bind(this)
     }
 
-    handleLoggedInStatus(status, name) {
+    handleLoggedInStatus(status, username) {
         this.setState({
             isLoggedIn: status,
-            name: name
+            username: username
         })
     }
 
     handleTheme() {
         this.setState({
             theme: (this.state.theme === 'dark') ? 'light' : 'dark'
+        })
+    }
+
+    changeName(username) {
+        this.setState({
+            username: username
         })
     }
 
@@ -57,7 +65,7 @@ class App extends React.Component{
                         </p>
                         <button className={themes[this.state.theme].button} onClick={this.handleTheme}>Change theme</button>
                         <LoginLogout loggedInStatus={this.handleLoggedInStatus}/>
-                        <Data isLoggedIn={this.state.isLoggedIn} name={this.state.name} />
+                        <Data isLoggedIn={this.state.isLoggedIn} name={this.state.username} changeName={this.changeName} />
                         <a
                             className="App-link"
                             href="https://reactjs.org"

@@ -62,8 +62,9 @@ class Form extends React.Component {
             data: {
                 username: this.state.username
             }
-        }).then(function (response) {
-            console.log(response)
+        }).then((response) => {
+            console.log(response.data.username)
+            this.props.changeName(response.data.username)
         })
     }
 

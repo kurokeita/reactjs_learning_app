@@ -20,7 +20,7 @@ class Data extends React.Component {
                 <Listing list={list} />
                 <TemperatureCalculator />
                 <Toggle />
-                <Form />
+                <Form changeName={this.props.changeName}/>
             </div>
         )
     }

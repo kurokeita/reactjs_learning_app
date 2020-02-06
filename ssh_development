@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker exec -it reactjs systemctl disable httpd
+docker exec -it reactjs systemctl stop httpd
+docker exec -it reactjs cd /app && sudo npm start

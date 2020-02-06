@@ -7,8 +7,8 @@ RUN yum clean all
 
 RUN yum -y groupinstall "Development Tools"
 
-RUN curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
-RUN yum install nodejs
+RUN curl -sL https://rpm.nodesource.com/setup_10.x | bash -
+RUN yum -y install nodejs
 
 #RUN yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 #RUN yum install docker-ce docker-ce-cli containerd.io

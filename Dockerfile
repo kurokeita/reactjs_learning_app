@@ -20,6 +20,6 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
 
 RUN mkdir /app
 
-EXPOSE 80 8080
+EXPOSE 80 8080 38080
 
 CMD ["/sbin/init"]

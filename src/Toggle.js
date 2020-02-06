@@ -1,6 +1,7 @@
 import React from 'react'
 import Text from './Text'
 import {ThemeContext} from './ThemeContext'
+import Button from 'react-bootstrap/Button'
 
 class Toggle extends React.Component {
     static contextType = ThemeContext
@@ -24,12 +25,12 @@ class Toggle extends React.Component {
         // let button = <button className={this.context.theme.button} onClick={this.handleClick}>{this.state.toggleState ? 'ON' : 'OFF'}</button>
         let button = <ThemeContext.Consumer>
             {({theme, themeToggle}) => (
-                <button className={theme.button} onClick={() => {
-                    this.handleClick()
-                    themeToggle()
+                <Button variant={theme.button === 'Button-light' ? 'light' : 'secondary'} onClick={() => {
+                    this.handleClick().then(themeToggle())
+                    // themeToggle()
                 }}>
                     {this.state.toggleState ? 'ON' : 'OFF'}
-                </button>
+                </Button>
             )}
         </ThemeContext.Consumer>
         return(

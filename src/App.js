@@ -5,6 +5,7 @@ import LoginLogout from './LoginLogout'
 import Data from './Data'
 import './App.css'
 import {ThemeContext, themes} from './ThemeContext'
+import Button from 'react-bootstrap/Button'
 
 class App extends React.Component{
     constructor(props) {
@@ -63,7 +64,7 @@ class App extends React.Component{
                             {/*<br/>*/}
                             {/*<Time interval='5000'/>*/}
                         </p>
-                        <button className={themes[this.state.theme].button} onClick={this.handleTheme}>Change theme</button>
+                        <Button className="mb-3" variant={this.state.theme === 'dark' ? 'light' : 'secondary'} onClick={this.handleTheme}>Change theme</Button>
                         <LoginLogout loggedInStatus={this.handleLoggedInStatus}/>
                         <Data isLoggedIn={this.state.isLoggedIn} name={this.state.username} changeName={this.changeName} />
                         <a

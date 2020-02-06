@@ -1,5 +1,7 @@
 import React from 'react'
 import axios from 'axios'
+import InputGroup from 'react-bootstrap/InputGroup'
+import FormControl from 'react-bootstrap/FormControl'
 
 class Form extends React.Component {
     constructor(props) {
@@ -86,20 +88,34 @@ class Form extends React.Component {
     render() {
         return(
             <form onSubmit={this.handleSubmit}>
-                <label>
-                    Name: <input type="text" name="name" value={this.state.typing} onChange={this.handleChangeInput}/>
-                </label>
+                {/*<label>*/}
+                {/*    Name: <input type="text" name="name" value={this.state.typing} onChange={this.handleChangeInput}/>*/}
+                {/*</label>*/}
+                <InputGroup className="mb-3">
+                    <InputGroup.Prepend>
+                        <InputGroup.Text>Name: </InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <FormControl name="name" value={this.state.typing} onChange={this.handleChangeInput}/>
+                </InputGroup>
                 <p>Typing: {this.state.typing}</p>
                 <p>Input: {this.state.name}</p>
-                <textarea name="textarea"/>
-                <pre><p>Textarea: <code>{this.state.textarea}</code></p></pre>
-                <select name="select" value={this.state.selecting} onChange={this.handleChangeSelect}>
-                    <option value="test">Test</option>
-                    <option value="kurokeita">kurokeita</option>
-                    <option value="admin">admin</option>
-                    <option value="naru">naru</option>
-                    <option value="wow">wow</option>
-                </select>
+                <InputGroup className="mb-3" size="lg">
+                    {/*<InputGroup.Prepend>*/}
+                    {/*    <InputGroup.Text>Input: </InputGroup.Text>*/}
+                    {/*</InputGroup.Prepend>*/}
+                    <FormControl as="textarea" name="textarea" aria-label="Textarea 1" style={{height:200}}/>
+                </InputGroup>
+                {/*<textarea name="textarea"/>*/}
+                <p>Textarea: <code>{this.state.textarea}</code></p>
+                <InputGroup className="mb-3">
+                    <FormControl as="select" name="select" value={this.state.selecting} onChange={this.handleChangeSelect}>
+                        <option value="test">Test</option>
+                        <option value="kurokeita">kurokeita</option>
+                        <option value="admin">admin</option>
+                        <option value="naru">naru</option>
+                        <option value="wow">wow</option>
+                    </FormControl>
+                </InputGroup>
                 <p>Selected: <code>{this.state.select}</code></p>
                 <input type="text" value="unable to edit" onChange={this.handleChange1}/>
                 <input type="submit" value="Submit"/>

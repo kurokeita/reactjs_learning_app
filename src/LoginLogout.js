@@ -1,5 +1,6 @@
 import React from 'react'
 import {ThemeContext} from './ThemeContext'
+import Button from 'react-bootstrap/Button'
 // const axios = require('axios')
 
 class LoginLogout extends React.Component {
@@ -34,9 +35,9 @@ class LoginLogout extends React.Component {
     render() {
         let button
         if (!this.state.isLoggedIn) {
-            button = <button className={this.context.theme.button} name="login" onClick={this.handleClick}>Log in</button>
+            button = <Button className="mb-3" variant="primary" name="login" onClick={this.handleClick}>Log in</Button>
         } else {
-            button = <button className={this.context.theme.button} name="logout" onClick={this.handleClick}>Log out</button>
+            button = <Button className="mb-3" variant="danger" name="logout" onClick={this.handleClick}>Log out</Button>
         }
 
         return(

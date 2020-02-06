@@ -1,4 +1,6 @@
 import React from 'react'
+import InputGroup from 'react-bootstrap/InputGroup'
+import FormControl from 'react-bootstrap/FormControl'
 
 class TemperatureInput extends React.Component {
     constructor(props) {
@@ -16,8 +18,12 @@ class TemperatureInput extends React.Component {
     render() {
         return(
             <div>
-                <label>{this.props.type}: </label>
-                <input type="text" value={this.props.value} name={this.props.type} onChange={this.handleOnChange} />
+                <InputGroup className="mb-3">
+                    <InputGroup.Prepend>
+                        <InputGroup.Text>{this.props.type}: </InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <FormControl placeholder="0" value={this.props.value} name={this.props.type} onChange={this.handleOnChange} />
+                </InputGroup>
             </div>
         )
     }

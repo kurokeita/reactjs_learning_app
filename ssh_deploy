@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker exec -it reactjs CMD 'cd /app && npm run build'
+docker exec -it reactjs CMD 'cp -Rf /app/build/. /var/www/html'
+docker exec -it reactjs CMD 'systemctl start httpd'

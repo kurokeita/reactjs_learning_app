@@ -4,6 +4,7 @@ import Listing from './Listing'
 import Toggle from './Toggle'
 import Form from './Form'
 import TemperatureCalculator from './TemperatureCalculator'
+import RefForm from './RefForm'
 
 class Data extends React.Component {
     render() {
@@ -20,6 +21,9 @@ class Data extends React.Component {
                 <Listing list={list} />
                 <TemperatureCalculator />
                 <Toggle />
+                <RefForm name='Test 1'/>
+                <RefForm name='Test 2'/>
+                <RefForm name='Test new'/>
                 <Form changeName={this.props.changeName}/>
             </div>
         )

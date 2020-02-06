@@ -1,0 +1,13 @@
+version: '3'
+services:
+  reactjs:
+    container_name: reactjs
+    build: ''
+    ports:
+      - '80:80'
+      - '8080:8080'
+    volumes:
+      - ../reactjs_learning_app/:/app/
+    restart: always
+    tty: true
+    privileged: true

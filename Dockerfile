@@ -19,6 +19,7 @@ RUN cp /etc/localtime /etc/localtime.org
 RUN ln -sf /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
 
 RUN mkdir /app
+WORKDIR /app
 
 EXPOSE 80 8080 38080
 

@@ -58,7 +58,7 @@ class Form extends React.Component {
         })
         axios.request({
             method: 'POST',
-            url: 'http://kurokeita.ddns.net:38080/api/test',
+            url: 'http://reactjs.ddns.net:38081/api/test',
             headers: {
                 'Access-Control-Allow-Origin': '*',
             },

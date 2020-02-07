@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
+import RefForm from "./RefForm";
 
 class Form extends React.Component {
     constructor(props) {
@@ -88,24 +89,12 @@ class Form extends React.Component {
     render() {
         return(
             <form onSubmit={this.handleSubmit}>
-                {/*<label>*/}
-                {/*    Name: <input type="text" name="name" value={this.state.typing} onChange={this.handleChangeInput}/>*/}
-                {/*</label>*/}
-                <InputGroup className="mb-3">
-                    <InputGroup.Prepend>
-                        <InputGroup.Text>Name: </InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <FormControl name="name" value={this.state.typing} onChange={this.handleChangeInput}/>
-                </InputGroup>
+                <RefForm name="name" buttonName="Name" value={this.state.typing} onChange={this.handleChangeInput}/>
                 <p>Typing: {this.state.typing}</p>
                 <p>Input: {this.state.name}</p>
                 <InputGroup className="mb-3" size="lg">
-                    {/*<InputGroup.Prepend>*/}
-                    {/*    <InputGroup.Text>Input: </InputGroup.Text>*/}
-                    {/*</InputGroup.Prepend>*/}
                     <FormControl as="textarea" name="textarea" aria-label="Textarea 1" style={{height:200}}/>
                 </InputGroup>
-                {/*<textarea name="textarea"/>*/}
                 <p>Textarea: <code>{this.state.textarea}</code></p>
                 <InputGroup className="mb-3">
                     <FormControl as="select" name="select" value={this.state.selecting} onChange={this.handleChangeSelect}>

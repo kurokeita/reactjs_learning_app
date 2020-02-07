@@ -8,7 +8,7 @@ class RefButton extends React.Component {
 
     render() {
         return (
-            <Button variant="primary" name="ref-button" className="mb-3" onClick={this.props.onClick}>
+            <Button variant="primary" name={this.props.name} className="mb-3" onClick={this.props.onClick}>
                 {this.props.children}
             </Button>
         )

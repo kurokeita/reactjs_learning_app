@@ -19,9 +19,9 @@ class RefForm extends React.Component {
         return (
             <InputGroup className="mb-3">
                 <InputGroup.Prepend>
-                    <RefButton onClick={this.handleClick}>{this.props.name}</RefButton>
+                    <RefButton onClick={this.handleClick}>{this.props.buttonName}</RefButton>
                 </InputGroup.Prepend>
-                <FormControl name="ref_test[]" ref={this.refFocus}/>
+                <FormControl name={this.props.name} ref={this.refFocus} value={this.props.value} onChange={this.props.onChange}/>
             </InputGroup>
         )
     }

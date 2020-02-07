@@ -28,7 +28,7 @@ class Toggle extends React.Component {
                     this.handleClick()
                     themeToggle()
                 }}>
-                    {this.state.toggleState ? 'ON' : 'OFF'}
+                    {theme.theme === 'light' ? 'ON' : 'OFF'}
                 </button>
             )}
         </ThemeContext.Consumer>

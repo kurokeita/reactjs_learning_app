@@ -2,5 +2,6 @@
 
 docker exec -it reactjs npm install && npm run build
 docker exec -it reactjs cp -Rf build/. /var/www/html
+docker exec -it reactjs bash -c 'pm2 stop reactjs'
 docker exec -it reactjs systemctl enable httpd
 docker exec -it reactjs systemctl start httpd

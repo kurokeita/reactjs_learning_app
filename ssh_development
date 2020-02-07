@@ -2,4 +2,4 @@
 
 docker exec -it reactjs systemctl disable httpd
 docker exec -it reactjs systemctl stop httpd
-docker exec -it reactjs cd /app && npm install && sudo npm start
+docker exec -it reactjs bash -c 'npm install && npm start'

@@ -3,6 +3,8 @@ import axios from 'axios'
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 import RefForm from "./RefForm";
+import './App.css'
+import {ThemeContext} from './ThemeContext'
 
 class Form extends React.Component {
     constructor(props) {
@@ -23,18 +25,6 @@ class Form extends React.Component {
         this.handleOnChange = this.handleOnChange.bind(this)
         this.handleChange1 = this.handleChange1.bind(this)
     }
-
-    // componentDidMount() {
-    //     axios.request({
-    //         method: 'POST',
-    //         url: 'http://kurokeita.ddns.net:38080/api/test',
-    //         data: {
-    //             username: this.state.username
-    //         }
-    //     }).then((res) => {
-    //         console.log(res)
-    //     })
-    // }
 
     handleChangeInput(e) {
         this.setState({
@@ -105,7 +95,13 @@ class Form extends React.Component {
                         <option value="wow">wow</option>
                     </FormControl>
                 </InputGroup>
-                <p>Selected: <code>{this.state.select}</code></p>
+                <div>Selected: {(
+                    <ThemeContext.Consumer>
+                        {({theme}) => (
+                            <pre style={{color: (theme.theme === 'dark' ? '#e83e8c' : 'black')}}><code>{this.state.select}</code></pre>
+                        )}
+                    </ThemeContext.Consumer>
+                )}</div>
                 <input type="text" value="unable to edit" onChange={this.handleChange1}/>
                 <input type="submit" value="Submit"/>
             </form>

@@ -22,13 +22,12 @@ class Toggle extends React.Component {
     }
 
     render() {
-        // let button = <button className={this.context.theme.button} onClick={this.handleClick}>{this.state.toggleState ? 'ON' : 'OFF'}</button>
         let button = <ThemeContext.Consumer>
             {({theme, themeToggle}) => (
-                <Button variant={theme.button === 'Button-light' ? 'light' : 'secondary'} onClick={() => {
+                <Button variant={theme.theme === 'dark' ? 'light' : 'secondary'} onClick={() => {
                     this.handleClick().then(themeToggle())
                 }}>
-                    {theme.theme === 'light' ? 'ON' : 'OFF'}
+                    {theme.theme === 'light' ? 'Light' : 'Dark'}
                 </Button>
             )}
         </ThemeContext.Consumer>

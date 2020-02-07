@@ -21,9 +21,9 @@ class Data extends React.Component {
                 <Listing list={list} />
                 <TemperatureCalculator />
                 <Toggle />
-                <RefForm name='Test 1'/>
-                <RefForm name='Test 2'/>
-                <RefForm name='Test new'/>
+                <RefForm buttonName='Test 1'/>
+                <RefForm buttonName='Test 2'/>
+                <RefForm buttonName='Test new'/>
                 <Form changeName={this.props.changeName}/>
             </div>
         )

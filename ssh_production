@@ -1,0 +1,12 @@
+#!/bin/bash
+
+docker exec -it reactjs npm install && npm run build
+echo '#### Build finished'
+docker exec -it reactjs cp -Rf build/. /var/www/html
+echo '#### Build readied to deploy'
+docker exec -it reactjs bash -c 'pm2 stop reactjs'
+echo '#### Development server is down'
+docker exec -it reactjs systemctl enable httpd
+echo '#### Apache is online'
+docker exec -it reactjs systemctl start httpd
+echo '#### Production server is online'

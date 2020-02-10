@@ -1,5 +1,6 @@
 import React from 'react'
 import RefButton from './RefButton'
+import RefInput from './RefInput'
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 
@@ -13,6 +14,7 @@ class RefForm extends React.Component {
 
     handleClick() {
         this.refFocus.current.focus()
+        console.log(this.refFocus.current.value)
     }
 
     render() {
@@ -21,7 +23,8 @@ class RefForm extends React.Component {
                 <InputGroup.Prepend>
                     <RefButton onClick={this.handleClick}>{this.props.buttonName}</RefButton>
                 </InputGroup.Prepend>
-                <FormControl name={this.props.name} ref={this.refFocus} value={this.props.value} onChange={this.props.onChange}/>
+                {/*<FormControl name={this.props.name} ref={this.refFocus} value={this.props.value} onChange={this.props.onChange}/>*/}
+                <RefInput ref={this.refFocus} props={this.props}/>
             </InputGroup>
         )
     }

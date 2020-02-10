@@ -6,3 +6,9 @@ docker exec -it reactjs systemctl stop httpd
 echo '#### Stopped apache2'
 docker exec -it reactjs bash -c "npm install && pm2 start node_modules/react-scripts/scripts/start.js --name 'reactjs' --watch && pm2 startup systemd"
 echo '#### Development server is online'
+sudo cp development.conf /etc/apache2/sites-available/development.conf
+sudo a2dissite production.conf
+sudo a2ensite development.conf
+sudo a2dissite 000-default.conf
+sudo a2enmod proxy rewrite
+sudo systemctl restart apache2

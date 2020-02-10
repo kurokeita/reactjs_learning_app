@@ -10,3 +10,9 @@ docker exec -it reactjs systemctl enable httpd
 echo '#### Apache is online'
 docker exec -it reactjs systemctl start httpd
 echo '#### Production server is online'
+sudo cp production.conf /etc/apache2/sites-available/production.conf
+sudo a2dissite development.conf
+sudo a2ensite production.conf
+sudo a2dissite 000-default.conf
+sudo a2enmod proxy rewrite
+sudo systemctl restart apache2

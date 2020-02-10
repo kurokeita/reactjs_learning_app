@@ -4,8 +4,7 @@ services:
     container_name: reactjs
     build: ''
     ports:
-#      - '80:80'
-      - '8080:8080'
+      - '8080:80'
       - '38080:38080'
     volumes:
       - ../reactjs_learning_app/:/app/

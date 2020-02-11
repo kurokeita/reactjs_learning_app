@@ -5,6 +5,8 @@ import Toggle from './Toggle'
 import Form from './Form'
 import TemperatureCalculator from './TemperatureCalculator'
 import RefForm from './RefForm'
+import HOC from './HOC'
+import InputHOC from './InputHOC'
 
 class Data extends React.Component {
     render() {
@@ -13,6 +15,12 @@ class Data extends React.Component {
         if (!this.props.isLoggedIn) {
             return null
         }
+        const WrappedInputHOC = HOC(InputHOC,{
+            input: 'kurokeita'
+        })
+        const NewWrappedInputHOC = HOC(InputHOC,{
+            input: 'naru'
+        })
         return(
             <div>
                 <Test name={this.props.name}>
@@ -24,6 +32,12 @@ class Data extends React.Component {
                 <RefForm buttonName='Test 1'/>
                 <RefForm buttonName='Test 2'/>
                 <RefForm buttonName='Test new'/>
+                {/*{HOC(InputHOC,{*/}
+                {/*    input: 'kurokeita',*/}
+                {/*    name: 'input_text'*/}
+                {/*})}*/}
+                <WrappedInputHOC name='name_1'/>
+                <NewWrappedInputHOC name='name_2'/>
                 <Form changeName={this.props.changeName}/>
             </div>
         )

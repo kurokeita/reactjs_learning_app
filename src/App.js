@@ -65,7 +65,15 @@ class App extends React.Component{
     render() {
         return (
             <ThemeContext.Provider value={{theme:themes[this.state.theme], themeToggle: this.themeToggle}}>
-                <div className="App" style={{ height: "100%", width: "100%" }} onMouseMove={this.handleMouseMove}>
+                <div
+                    className="App"
+                    style={{
+                        height: "100%",
+                        width: "100%",
+                        // cursor: "url('/cursor.png'), auto"
+                    }}
+                    onMouseMove={this.handleMouseMove}
+                >
                     <React.StrictMode>
                         <Pointer mouse={this.state.mouse} />
                         <header className={"App-header " + themes[this.state.theme].background}>

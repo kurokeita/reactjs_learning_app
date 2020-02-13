@@ -122,7 +122,6 @@ function Form(props) {
     const [ textarea, setTextarea ] = useState('')
     const [ select, setSelect ] = useState('')
     const [ selecting, setSelecting ] = useState('kurokeita')
-    const [ username, setUsername ] = useState('')
     const theme = useContext(ThemeContext)
 
     function handleChangeInput(e) {
@@ -138,7 +137,6 @@ function Form(props) {
         setName(e.target.name.value)
         setTextarea(e.target.textarea.value)
         setSelect(e.target.select.value)
-        setUsername(e.target.name.value)
         axios.request({
             method: 'POST',
             url: 'http://reactjs.ddns.net:38081/api/test',

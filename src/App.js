@@ -3,6 +3,7 @@ import logo from './logo.svg'
 import Time from './Time'
 import LoginLogout from './LoginLogout'
 import Data from './Data'
+import Pointer from './Pointer'
 import './App.css'
 import {ThemeContext, themes} from './ThemeContext'
 import Button from 'react-bootstrap/Button'
@@ -21,11 +22,16 @@ class App extends React.Component{
         this.state = {
             isLoggedIn: false,
             name: '',
-            theme: 'dark'
+            theme: 'dark',
+            mouse: {
+                mouseX: 0,
+                mouseY: 0
+            }
         }
         this.handleLoggedInStatus = this.handleLoggedInStatus.bind(this)
         this.handleTheme = this.handleTheme.bind(this)
         this.changeName = this.changeName.bind(this)
+        this.handleMouseMove = this.handleMouseMove.bind(this)
     }
 
     handleLoggedInStatus(status, username) {
@@ -47,35 +53,45 @@ class App extends React.Component{
         })
     }
 
+    handleMouseMove(e) {
+        this.setState({
+            mouse: {
+                mouseX: e.clientX,
+                mouseY: e.clientY
+            }
+        })
+    }
+
     render() {
         return (
             <ThemeContext.Provider value={{theme:themes[this.state.theme], themeToggle: this.themeToggle}}>
-                <div className="App">
+                <div className="App" style={{ height: "100%", width: "100%" }} onMouseMove={this.handleMouseMove}>
                     <React.StrictMode>
-                    <header className={"App-header " + themes[this.state.theme].background}>
-                        <img src={logo} className="App-logo" alt="logo" />
-                        <p>
-                            Edit <code>src/App.js</code> and save to reload.
-                        </p>
-                        <p>
-                            <Time interval='1000'/>
-                            <br/>
-                            {/* <Time interval='2000'/> */}
-                            {/*<br/>*/}
-                            {/*<Time interval='5000'/>*/}
-                        </p>
-                        <Button className="mb-3" variant={this.state.theme === 'dark' ? 'light' : 'secondary'} onClick={this.handleTheme}>Change theme</Button>
-                        <LoginLogout loggedInStatus={this.handleLoggedInStatus}/>
-                        <Data isLoggedIn={this.state.isLoggedIn} name={this.state.username} changeName={this.changeName} />
-                        <a
-                            className="App-link"
-                            href="https://reactjs.org"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Learn React
-                        </a>
-                    </header>
+                        <Pointer mouse={this.state.mouse} />
+                        <header className={"App-header " + themes[this.state.theme].background}>
+                            <img src={logo} className="App-logo" alt="logo" />
+                            <p>
+                                Edit <code>src/App.js</code> and save to reload.
+                            </p>
+                            <p>
+                                <Time interval='1000'/>
+                                <br/>
+                                {/* <Time interval='2000'/> */}
+                                {/*<br/>*/}
+                                {/*<Time interval='5000'/>*/}
+                            </p>
+                            <Button className="mb-3" variant={this.state.theme === 'dark' ? 'light' : 'secondary'} onClick={this.handleTheme}>Change theme</Button>
+                            <LoginLogout loggedInStatus={this.handleLoggedInStatus}/>
+                            <Data isLoggedIn={this.state.isLoggedIn} name={this.state.username} changeName={this.changeName} />
+                            <a
+                                className="App-link"
+                                href="https://reactjs.org"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Learn React
+                            </a>
+                        </header>
                     </React.StrictMode>
                 </div>
             </ThemeContext.Provider>

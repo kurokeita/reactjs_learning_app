@@ -42,7 +42,7 @@ function RefForm(props) {
     return (
         <InputGroup className="mb-3">
             <InputGroup.Prepend>
-                <RefButton onClick={handleClick}>{props.buttonName}</RefButton>
+                <RefButton onClick={handleClick} style={props.style} variant={props.variant}>{props.buttonName}</RefButton>
             </InputGroup.Prepend>
             <RefInput ref={refFocus} {...props} />
         </InputGroup>

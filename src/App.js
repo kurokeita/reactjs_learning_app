@@ -72,35 +72,32 @@ class App extends React.Component {
                         width: "100%",
                         // cursor: "url('/cursor.png'), auto"
                     }}
-                    onMouseMove={this.handleMouseMove}
                 >
-                    <React.StrictMode>
-                        <Pointer mouse={this.state.mouse} />
-                        <header className={"App-header " + themes[this.state.theme].background}>
-                            <img src={logo} className="App-logo" alt="logo" />
-                            <p>
-                                Edit <code>src/App.js</code> and save to reload.
-                            </p>
-                            <p>
-                                <Time interval='1000' />
-                                <br />
-                                {/* <Time interval='2000'/> */}
-                                {/*<br/>*/}
-                                {/*<Time interval='5000'/>*/}
-                            </p>
-                            <Button className="mb-3" variant={this.state.theme === 'dark' ? 'light' : 'secondary'} onClick={this.handleTheme}>Change theme</Button>
-                            <LoginLogout loggedInStatus={this.handleLoggedInStatus} />
-                            <Data isLoggedIn={this.state.isLoggedIn} name={this.state.username} changeName={this.changeName} />
-                            <a
-                                className="App-link"
-                                href="https://reactjs.org"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Learn React
-                            </a>
-                        </header>
-                    </React.StrictMode>
+                    <Pointer mouse={this.state.mouse} />
+                    <header className={"App-header " + themes[this.state.theme].background}>
+                        <img src={logo} className="App-logo" alt="logo" />
+                        <p>
+                            Edit <code>src/App.js</code> and save to reload.
+                        </p>
+                        <p>
+                            <Time interval='1000' />
+                            <br />
+                            {/* <Time interval='2000'/> */}
+                            {/*<br/>*/}
+                            {/*<Time interval='5000'/>*/}
+                        </p>
+                        <Button className="mb-3" variant={this.state.theme === 'dark' ? 'light' : 'secondary'} onClick={this.handleTheme}>Change theme</Button>
+                        <LoginLogout loggedInStatus={this.handleLoggedInStatus} />
+                        <Data isLoggedIn={this.state.isLoggedIn} name={this.state.username} changeName={this.changeName} />
+                        <a
+                            className="App-link"
+                            href="https://reactjs.org"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Learn React
+                        </a>
+                    </header>
                 </div>
             </ThemeContext.Provider>
         )

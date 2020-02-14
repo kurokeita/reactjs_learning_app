@@ -7,6 +7,7 @@ import TemperatureCalculator from './TemperatureCalculator'
 import RefForm from './RefForm'
 import HOC from './HOC'
 import InputHOC from './InputHOC'
+import NoteCard from './NoteCard'
 
 class Data extends React.Component {
     render() {
@@ -39,6 +40,7 @@ class Data extends React.Component {
                 <WrappedInputHOC name='name_1' />
                 <NewWrappedInputHOC name='name_2' />
                 <Form changeName={this.props.changeName} />
+                <NoteCard />
             </div>
         )
     }

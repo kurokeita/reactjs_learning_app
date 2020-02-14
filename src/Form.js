@@ -6,8 +6,8 @@ import Button from 'react-bootstrap/Button'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
-import RefForm from "./RefForm";
-import { ThemeContext } from './ThemeContext'
+import RefForm from "./Components/InputFormRef/RefForm";
+import { ThemeContext } from './Components/Context/ThemeContext'
 import { ButtonToolbar } from 'react-bootstrap'
 
 function Form(props) {
@@ -55,7 +55,7 @@ function Form(props) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <RefForm name="name" buttonName="Name" value={typing} onChange={handleChangeInput} />
+            <RefForm type='button' name="name" buttonName="Name" value={typing} onChange={handleChangeInput} />
             <p>Typing: {typing}</p>
             <p>Input: {name}</p>
             <InputGroup className="mb-3" size="lg">

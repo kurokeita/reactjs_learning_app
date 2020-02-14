@@ -5,7 +5,7 @@ import InputGroup from 'react-bootstrap/InputGroup'
 export default function InputHOC(props) {
     return (
         <InputGroup className='mb-3' >
-            <FormControl {...props}/>
+            <FormControl {...props} />
         </InputGroup>
     )
 }

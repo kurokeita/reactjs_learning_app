@@ -49,7 +49,7 @@ import Button from 'react-bootstrap/Button'
 // }
 
 function LoginLogout(props) {
-    const [ loginState, setLoginState ] = useState(false)
+    const [loginState, setLoginState] = useState(false)
 
     function handleClick(e) {
         let name = e.target.name
@@ -66,7 +66,7 @@ function LoginLogout(props) {
         button = <Button className="mb-3" variant="danger" name="logout" onClick={handleClick}>Log out</Button>
     }
 
-    return(
+    return (
         <div>
             {button}
         </div>

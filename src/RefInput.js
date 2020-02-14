@@ -18,8 +18,8 @@ import FormControl from 'react-bootstrap/FormControl'
 // ))
 
 const RefInput = React.forwardRef((props, ref) => {
-    return(
-        <FormControl name={props.name} ref={ref} value={props.value} onChange={props.onChange}/>
+    return (
+        <FormControl name={props.name} ref={ref} value={props.value} onChange={props.onChange} />
     )
 })
 

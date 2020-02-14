@@ -7,7 +7,7 @@ class Listing extends React.Component {
         let out = list.map((item) => (
             <li key={i++}>{item}</li>
         ))
-        return(
+        return (
             <ul>{out}</ul>
         )
     }

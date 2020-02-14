@@ -13,7 +13,7 @@ const HOC = (WrappedComponent, input) => {
         render() {
             // console.log(this.state.input)
             return (
-                <WrappedComponent {...this.props} value={this.state.value} readOnly/>
+                <WrappedComponent {...this.props} value={this.state.value} readOnly />
             )
         }
     }

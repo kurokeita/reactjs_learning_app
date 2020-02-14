@@ -5,10 +5,10 @@ import LoginLogout from './LoginLogout'
 import Data from './Data'
 import Pointer from './Pointer'
 import './App.css'
-import {ThemeContext, themes} from './ThemeContext'
+import { ThemeContext, themes } from './ThemeContext'
 import Button from 'react-bootstrap/Button'
 
-class App extends React.Component{
+class App extends React.Component {
     constructor(props) {
         super(props)
 
@@ -64,7 +64,7 @@ class App extends React.Component{
 
     render() {
         return (
-            <ThemeContext.Provider value={{theme:themes[this.state.theme], themeToggle: this.themeToggle}}>
+            <ThemeContext.Provider value={{ theme: themes[this.state.theme], themeToggle: this.themeToggle }}>
                 <div
                     className="App"
                     style={{
@@ -82,14 +82,14 @@ class App extends React.Component{
                                 Edit <code>src/App.js</code> and save to reload.
                             </p>
                             <p>
-                                <Time interval='1000'/>
-                                <br/>
+                                <Time interval='1000' />
+                                <br />
                                 {/* <Time interval='2000'/> */}
                                 {/*<br/>*/}
                                 {/*<Time interval='5000'/>*/}
                             </p>
                             <Button className="mb-3" variant={this.state.theme === 'dark' ? 'light' : 'secondary'} onClick={this.handleTheme}>Change theme</Button>
-                            <LoginLogout loggedInStatus={this.handleLoggedInStatus}/>
+                            <LoginLogout loggedInStatus={this.handleLoggedInStatus} />
                             <Data isLoggedIn={this.state.isLoggedIn} name={this.state.username} changeName={this.changeName} />
                             <a
                                 className="App-link"

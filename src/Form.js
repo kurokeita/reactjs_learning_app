@@ -4,7 +4,7 @@ import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import RefForm from "./RefForm";
-import {ThemeContext} from './ThemeContext'
+import { ThemeContext } from './ThemeContext'
 
 // class Form1 extends React.Component {
 //     constructor(props) {
@@ -117,11 +117,11 @@ import {ThemeContext} from './ThemeContext'
 // }
 
 function Form(props) {
-    const [ name, setName ] = useState('')
-    const [ typing, setTyping ] = useState('')
-    const [ textarea, setTextarea ] = useState('')
-    const [ select, setSelect ] = useState('')
-    const [ selecting, setSelecting ] = useState('kurokeita')
+    const [name, setName] = useState('')
+    const [typing, setTyping] = useState('')
+    const [textarea, setTextarea] = useState('')
+    const [select, setSelect] = useState('')
+    const [selecting, setSelecting] = useState('kurokeita')
     const theme = useContext(ThemeContext)
 
     function handleChangeInput(e) {
@@ -154,18 +154,18 @@ function Form(props) {
 
     useEffect(() => {
         console.log(name)
-        if(name) {
+        if (name) {
             document.title = name
         }
     }, [name])
 
-    return(
+    return (
         <form onSubmit={handleSubmit}>
-            <RefForm name="name" buttonName="Name" value={typing} onChange={handleChangeInput}/>
+            <RefForm name="name" buttonName="Name" value={typing} onChange={handleChangeInput} />
             <p>Typing: {typing}</p>
             <p>Input: {name}</p>
             <InputGroup className="mb-3" size="lg">
-                <FormControl as="textarea" name="textarea" aria-label="Textarea 1" style={{height:200}}/>
+                <FormControl as="textarea" name="textarea" aria-label="Textarea 1" style={{ height: 200 }} />
             </InputGroup>
             <p>Textarea: <code>{textarea}</code></p>
             <InputGroup className="mb-3">
@@ -178,9 +178,9 @@ function Form(props) {
                 </FormControl>
             </InputGroup>
             <div>Selected:
-                <pre style={{color: (theme.theme.theme === 'dark' ? '#e83e8c' : 'black')}}><code>{select}</code></pre>
+                <pre style={{ color: (theme.theme.theme === 'dark' ? '#e83e8c' : 'black') }}><code>{select}</code></pre>
             </div>
-            <FormControl value="unable to edit" readOnly/>
+            <FormControl value="unable to edit" readOnly />
             <Button type="submit" variant="primary">Submit</Button>
         </form>
     )

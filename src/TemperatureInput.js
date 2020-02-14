@@ -15,9 +15,9 @@ class TemperatureInput extends React.Component {
     }
 
     render() {
-        return(
+        return (
             <div>
-                <RefForm name={this.props.type} buttonName={this.props.type} value={this.props.value} onChange={this.handleOnChange}/>
+                <RefForm name={this.props.type} buttonName={this.props.type} value={this.props.value} onChange={this.handleOnChange} />
             </div>
         )
     }

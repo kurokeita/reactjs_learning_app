@@ -39,12 +39,12 @@ function RefForm(props) {
         console.log(refFocus.current.value)
     }
 
-    return(
+    return (
         <InputGroup className="mb-3">
             <InputGroup.Prepend>
                 <RefButton onClick={handleClick}>{props.buttonName}</RefButton>
             </InputGroup.Prepend>
-            <RefInput ref={refFocus} {...props}/>
+            <RefInput ref={refFocus} {...props} />
         </InputGroup>
     )
 }

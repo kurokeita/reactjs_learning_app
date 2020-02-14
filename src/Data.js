@@ -15,13 +15,13 @@ class Data extends React.Component {
         if (!this.props.isLoggedIn) {
             return null
         }
-        const WrappedInputHOC = HOC(InputHOC,{
+        const WrappedInputHOC = HOC(InputHOC, {
             input: 'kurokeita'
         })
-        const NewWrappedInputHOC = HOC(InputHOC,{
+        const NewWrappedInputHOC = HOC(InputHOC, {
             input: 'naru'
         })
-        return(
+        return (
             <div>
                 <Test name={this.props.name}>
                     <code>Test props children</code>
@@ -29,16 +29,16 @@ class Data extends React.Component {
                 <Listing list={list} />
                 <TemperatureCalculator />
                 <Toggle />
-                <RefForm buttonName='Test 1'/>
-                <RefForm buttonName='Test 2'/>
-                <RefForm buttonName='Test new'/>
+                <RefForm buttonName='Test 1' />
+                <RefForm buttonName='Test 2' />
+                <RefForm buttonName='Test new' />
                 {/*{HOC(InputHOC,{*/}
                 {/*    input: 'kurokeita',*/}
                 {/*    name: 'input_text'*/}
                 {/*})}*/}
-                <WrappedInputHOC name='name_1'/>
-                <NewWrappedInputHOC name='name_2'/>
-                <Form changeName={this.props.changeName}/>
+                <WrappedInputHOC name='name_1' />
+                <NewWrappedInputHOC name='name_2' />
+                <Form changeName={this.props.changeName} />
             </div>
         )
     }

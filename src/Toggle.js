@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import Text from './Text'
-import {ThemeContext} from './ThemeContext'
+import { ThemeContext } from './ThemeContext'
 import Button from 'react-bootstrap/Button'
 
 // class Toggle extends React.Component {
@@ -44,7 +44,7 @@ import Button from 'react-bootstrap/Button'
 // }
 
 function Toggle() {
-    const [ toggleState, setToggleState ] = useState(false)
+    const [toggleState, setToggleState] = useState(false)
     const theme = useContext(ThemeContext)
 
     async function handleClick() {
@@ -59,7 +59,7 @@ function Toggle() {
         </Button>
     )
 
-    return(
+    return (
         <div>
             <p>{button}</p>
             <Text toggle={toggleState} />

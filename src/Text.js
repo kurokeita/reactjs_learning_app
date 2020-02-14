@@ -15,7 +15,7 @@ import React from 'react'
 // }
 
 function Text(props) {
-    return(
+    return (
         <span>The button is {props.toggle ? 'ON' : 'OFF'}</span>
     )
 }

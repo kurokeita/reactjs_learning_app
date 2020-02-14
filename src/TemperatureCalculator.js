@@ -29,7 +29,7 @@ class TemperatureCalculator extends React.Component {
     }
 
     render() {
-        return(
+        return (
             <div>
                 <TemperatureInput type="Celsius" value={this.state.Celsius} onChange={this.handleTemperature} />
                 <TemperatureInput type="Fahrenheit" value={this.state.Fahrenheit} onChange={this.handleTemperature} />

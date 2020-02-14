@@ -29,7 +29,7 @@ import React, { useState, useEffect } from 'react'
 // }
 
 function Time(props) {
-    const [ time, setTime ] = useState((new Date()).toLocaleTimeString())
+    const [time, setTime] = useState((new Date()).toLocaleTimeString())
 
     useEffect(() => {
         const timer = setInterval(
@@ -43,7 +43,7 @@ function Time(props) {
         }
     })
 
-    return(
+    return (
         <span>The time is: {time}</span>
     )
 }

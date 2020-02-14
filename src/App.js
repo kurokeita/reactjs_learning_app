@@ -1,11 +1,11 @@
 import React from 'react'
 import logo from './logo.svg'
-import Time from './Time'
-import LoginLogout from './LoginLogout'
+import Time from './Components/Misc/Time'
+import LoginLogout from './Components/Misc/LoginLogout'
 import Data from './Data'
-import Pointer from './Pointer'
+import Pointer from './Components/Cursor/Pointer'
 import './App.css'
-import { ThemeContext, themes } from './ThemeContext'
+import { ThemeContext, themes } from './Components/Context/ThemeContext'
 import Button from 'react-bootstrap/Button'
 
 class App extends React.Component {
@@ -73,7 +73,7 @@ class App extends React.Component {
                         // cursor: "url('/cursor.png'), auto"
                     }}
                 >
-                    <Pointer mouse={this.state.mouse} />
+                    {/* <Pointer mouse={this.state.mouse} /> */}
                     <header className={"App-header " + themes[this.state.theme].background}>
                         <img src={logo} className="App-logo" alt="logo" />
                         <p>

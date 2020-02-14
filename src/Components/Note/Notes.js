@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import RefForm from './RefForm'
+import RefForm from '../InputFormRef/RefForm'
 
 function Notes(props) {
     const [notes, setNotes] = useState([
@@ -54,8 +54,8 @@ function Notes(props) {
             </Tab.Container>
             <Container fluid className='mt-5'>
                 <Form onSubmit={handleAddNote}>
-                    <RefForm name="title" buttonName="Title" style={{minWidth: '100px'}} variant='info'/>
-                    <RefForm name="content" buttonName="Content" style={{minWidth: '100px'}} variant='info' />
+                    <RefForm type='label' name="title" labelName="Title" style={{minWidth: '100px'}} variant='info'/>
+                    <RefForm type='label' name="content" labelName="Content" style={{minWidth: '100px'}} variant='info' />
                     <Button variant='success' type='submit' block>Add</Button>
                 </Form>
             </Container>

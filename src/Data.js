@@ -1,13 +1,13 @@
 import React from 'react'
-import Test from './Test'
-import Listing from './Listing'
-import Toggle from './Toggle'
+import Test from './Components/Misc/Test'
+import Listing from './Components/Misc/Listing'
+import Toggle from './Components/Misc/Toggle'
 import Form from './Form'
-import TemperatureCalculator from './TemperatureCalculator'
-import RefForm from './RefForm'
-import HOC from './HOC'
-import InputHOC from './InputHOC'
-import NoteCard from './NoteCard'
+import TemperatureCalculator from './Components/Temperature/TemperatureCalculator'
+import RefForm from './Components/InputFormRef/RefForm'
+import HOC from './Components/HOC/HOC'
+import InputHOC from './Components/HOC/InputHOC'
+import NoteCard from './Components/Note/NoteCard'
 
 class Data extends React.Component {
     render() {
@@ -30,13 +30,9 @@ class Data extends React.Component {
                 <Listing list={list} />
                 <TemperatureCalculator />
                 <Toggle />
-                <RefForm buttonName='Test 1' />
-                <RefForm buttonName='Test 2' />
-                <RefForm buttonName='Test new' />
-                {/*{HOC(InputHOC,{*/}
-                {/*    input: 'kurokeita',*/}
-                {/*    name: 'input_text'*/}
-                {/*})}*/}
+                <RefForm type='button' buttonName='Test 1' />
+                <RefForm type='button' buttonName='Test 2' />
+                <RefForm type='label' labelName='Test new' />
                 <WrappedInputHOC name='name_1' />
                 <NewWrappedInputHOC name='name_2' />
                 <Form changeName={this.props.changeName} />

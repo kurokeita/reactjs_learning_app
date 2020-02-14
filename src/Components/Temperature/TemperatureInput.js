@@ -1,5 +1,5 @@
 import React from 'react'
-import RefForm from './RefForm'
+import RefForm from '../InputFormRef/RefForm'
 
 class TemperatureInput extends React.Component {
     constructor(props) {
@@ -17,7 +17,7 @@ class TemperatureInput extends React.Component {
     render() {
         return (
             <div>
-                <RefForm name={this.props.type} buttonName={this.props.type} value={this.props.value} onChange={this.handleOnChange} />
+                <RefForm type='button' name={this.props.type} buttonName={this.props.type} value={this.props.value} onChange={this.handleOnChange} />
             </div>
         )
     }

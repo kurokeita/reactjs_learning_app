@@ -7,6 +7,7 @@ import Data from './Data'
 import './App.css'
 import { ThemeContext, themes } from './Components/Context/ThemeContext'
 import Button from 'react-bootstrap/Button'
+// import Test from './Components/Test/Test'
 
 class App extends React.Component {
     constructor(props) {
@@ -74,6 +75,7 @@ class App extends React.Component {
                     }}
                 >
                     {/* <Pointer mouse={this.state.mouse} /> */}
+                    {/* <Test /> */}
                     <header className={"App-header " + themes[this.state.theme].background}>
                         <img src={logo} className="App-logo" alt="logo" />
                         <p>

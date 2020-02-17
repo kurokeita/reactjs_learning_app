@@ -7,6 +7,7 @@ import Data from './Data'
 import './App.css'
 import { ThemeContext, themes } from './Components/Context/ThemeContext'
 import Button from 'react-bootstrap/Button'
+import AddTodo from './Components/Todo/AddTodo'
 
 class App extends React.Component {
     constructor(props) {
@@ -89,6 +90,7 @@ class App extends React.Component {
                         <Button className="mb-3" variant={this.state.theme === 'dark' ? 'light' : 'secondary'} onClick={this.handleTheme}>Change theme</Button>
                         <LoginLogout loggedInStatus={this.handleLoggedInStatus} />
                         <Data isLoggedIn={this.state.isLoggedIn} name={this.state.username} changeName={this.changeName} />
+                        <AddTodo />
                         <a
                             className="App-link"
                             href="https://reactjs.org"

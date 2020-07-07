@@ -11,7 +11,7 @@ import AddTodo from './Components/Todo/AddTodo'
 
 class App extends React.Component {
     constructor(props) {
-        super(props)
+        super(props
 
         this.themeToggle = () => {
             this.setState(state => ({
